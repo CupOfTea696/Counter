@@ -4,7 +4,7 @@ layout: default
 
 <!-- header start -->
 [![Latest Stable Version](https://poser.pugx.org/cupoftea/counter/version.svg)](https://packagist.org/packages/cupoftea/counter) [![Total Downloads](https://poser.pugx.org/cupoftea/counter/d/total.svg)](https://packagist.org/packages/cupoftea/counter) [![Latest Unstable Version](https://poser.pugx.org/cupoftea/counter/v/unstable.svg)](https://packagist.org/packages/cupoftea/counter)
-[![StyleCI](https://styleci.io/repos/36997384/shield?style=flat)](https://styleci.io/repos/36997384)
+[![StyleCI](https://styleci.io/repos/50363129/shield?style=flat)](https://styleci.io/repos/50363129)
 [![License](https://poser.pugx.org/cupoftea/counter/license.svg)](https://packagist.org/packages/cupoftea/counter)
 
 # Counter
