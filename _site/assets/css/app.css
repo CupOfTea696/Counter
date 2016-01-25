@@ -463,13 +463,13 @@ body {
   color: #525252; }
 
 a {
-  color: #7B920A;
+  color: #3f4c6b;
   text-decoration: none;
   cursor: pointer;
   transition: color .2s; }
 
 a:hover {
-  color: #ADD100; }
+  color: #606c88; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   position: relative;
@@ -481,7 +481,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     position: absolute;
     top: -1px;
     left: -25px;
-    color: #ADD100;
+    color: #606c88;
     opacity: .3;
     transition: opacity .2s; }
   h1 a[data-scrollto]:hover:before, h2 a[data-scrollto]:hover:before, h3 a[data-scrollto]:hover:before, h4 a[data-scrollto]:hover:before, h5 a[data-scrollto]:hover:before, h6 a[data-scrollto]:hover:before {
@@ -538,8 +538,8 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   position: relative;
   color: #FFF;
   text-align: center;
-  background-color: #94b205;
-  background-image: linear-gradient(120deg, #ADD100, #7B920A); }
+  background-color: #505c7a;
+  background-image: linear-gradient(120deg, #606c88, #3f4c6b); }
 
 .page-header main {
   max-width: 1170px;
@@ -766,16 +766,16 @@ label {
   display: block;
   margin: 32px 0;
   padding: 16px;
-  border: 1px solid #f3fdb9;
+  border: 1px solid #92b2ff;
   border-radius: 4px;
   font-size: 14px;
   font-size: 0.875rem;
   text-decoration: none;
-  color: #ADD100;
-  background-color: #F7FED2; }
+  color: #606c88;
+  background-color: #ABC4FF; }
   #easycfg u code {
-    color: #7B920A;
-    background-color: rgba(123, 146, 10, 0.1); }
+    color: #3f4c6b;
+    background-color: rgba(63, 76, 107, 0.1); }
 
 .breadcrumb {
   margin-bottom: 32px;
@@ -822,9 +822,9 @@ label {
   padding: 0 6rem;
   font-size: 1.1rem;
   color: #FFF;
-  background-color: rgba(169, 203, 6, 0.8);
-  background-image: linear-gradient(120deg, rgba(194, 235, 0, 0.8), rgba(143, 170, 12, 0.8));
-  border-bottom: 1px solid rgba(200, 237, 23, 0.9);
+  background-color: rgba(90, 104, 137, 0.8);
+  background-image: linear-gradient(120deg, rgba(107, 120, 151, 0.8), rgba(72, 87, 123, 0.8));
+  border-bottom: 1px solid rgba(114, 129, 164, 0.9);
   z-index: 99;
   /* .nav */
   /* .nav */
@@ -888,7 +888,7 @@ label {
       line-height: 1.5; }
       .sidebar\/nav\/item.\--active {
         font-weight: bold;
-        color: #ADD100; }
+        color: #606c88; }
 
 .toc {
   margin: 0;
@@ -901,7 +901,7 @@ label {
   .toc\/item {
     font-size: 14px;
     font-size: 0.875rem;
-    color: #ADD100; }
+    color: #606c88; }
     .toc\/item a {
       color: inherit; }
       .toc\/item a:before {
