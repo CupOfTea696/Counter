@@ -1,6 +1,6 @@
 {
     "name": "cupoftea/counter",
-    "description": "Simple indexed looping.",
+    "description": "Simple indexed looping",
     "require": {
         "cupoftea/package": "^1.2"
     },
