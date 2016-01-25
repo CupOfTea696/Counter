@@ -492,6 +492,14 @@ class Counter implements SeekableIterator
     //
     
     /**
+     * @see \CupOfTea\Support\Counter::loop
+     */
+    public function traverse($traversable)
+    {
+        return $this->loop($traversable);
+    }
+    
+    /**
      * @see \CupOfTea\Support\Counter::index
      */
     public function i()
