@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-``bash
+```bash
 $ composer require cupoftea/counter
 ```
 
