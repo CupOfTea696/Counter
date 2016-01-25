@@ -17,7 +17,7 @@
     
     git checkout build_site -- _site
     cp -r _site/ .
-    rm -rf _site
+    rm -rf _site build.sh
     git add .
     git commit -a -m "Site updated on `date +'%Y-%m-%d %H:%M:%S'`"
     git push origin gh-pages
