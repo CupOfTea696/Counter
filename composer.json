@@ -1,0 +1,26 @@
+{
+    "name": "cupoftea/counter",
+    "description": "Simple indexed looping.",
+    "require": {
+        "cupoftea/package": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CupOfTea696",
+            "email": "cupoftea696@gmail.com"
+        }
+    ],
+    "suggest": {
+        "illuminate/support": "Allows using Arrayable items as traversable and enables usage of the Counter Facade"
+    },
+    "autoload": {
+        "psr-4": {
+            "CupOfTea\\Counter\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
