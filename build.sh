@@ -1,13 +1,11 @@
 #!/bin/bash
     
-    cd /Users/CupOfTea696/Documents/_Work/Package
-    
     # Build the site
     echo "build start"
     jekyll build
     echo "build done"
     
-    git add *
+    git add .
 	git commit -a -m "Built site on `date +'%Y-%m-%d %H:%M:%S'`"
     
     # Push build_site
@@ -19,12 +17,12 @@
     git checkout build_site -- _site
     cp -r _site/ .
     rm -rf _site
-    git add *
+    git add .
     git commit -a -m "Site updated on `date +'%Y-%m-%d %H:%M:%S'`"
     git push origin gh-pages
 
 	# Finally, switch back to the master branch and exit block
-	git checkout master
+	#git checkout master
     
     # purge sass cache folder in case it exists within the master branch.
-    rm -rf .sass-cache
+    #rm -rf .sass-cache
