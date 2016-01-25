@@ -1,5 +1,11 @@
 # Counter
 
+## Quickstart
+
+``bash
+$ composer require cupoftea/counter
+```
+
 ## Simple counter
 
 ```php
@@ -27,3 +33,7 @@ foreach($counter->loop($my_traversable_object) as $key => $value) {
   //
 }
 ```
+
+## Laravel integration
+
+Add `CupOfTea\Counter\CounterServiceProvider` to your serviceproviders and `CupOfTea\Counter\Facade\Counter` to your facades.
