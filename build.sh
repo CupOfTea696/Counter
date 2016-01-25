@@ -3,6 +3,7 @@
     # Build the site
     echo "build start"
     jekyll build
+    rm -rf .asset-cache
     echo "build done"
     
     git add .
