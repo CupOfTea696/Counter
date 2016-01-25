@@ -23,7 +23,7 @@
     git push origin gh-pages
 
 	# Finally, switch back to the master branch and exit block
-	#git checkout master
+	git checkout master
     
     # purge sass cache folder in case it exists within the master branch.
-    #rm -rf .sass-cache
+    rm -rf .sass-cache
