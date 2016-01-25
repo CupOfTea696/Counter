@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class RiakServiceProvider extends ServiceProvider
+class CounterServiceProvider extends ServiceProvider
 {
     /**
      * Register bindings in the container.
