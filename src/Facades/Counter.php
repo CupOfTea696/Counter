@@ -1,6 +1,6 @@
 <?php namespace CupOfTea\Counter\Facades;
 
-use Illuminate\Support\Facade;
+use Illuminate\Support\Facades\Facade;
 
 class Counter extends Facade
 {
