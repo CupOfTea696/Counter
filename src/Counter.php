@@ -432,6 +432,20 @@ class Counter implements SeekableIterator
     }
     
     /**
+     * Return the current element.
+     *
+     * @return mixed
+     */
+    public function item()
+    {
+        if ($this->traversable()) {
+            return $this->current();
+        }
+        
+        return;
+    }
+    
+    /**
      * Get the current position.
      *
      * @return int
