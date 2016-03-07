@@ -16,6 +16,14 @@ navigation:
       - name: Installation
         type: page
         url: "installation"
+      - name: Usage
+        type: category
+      - name: Traversing
+        type: page
+        url: "traversing"
+      - name: Simple Counter
+        type: page
+        url: "simple-counter"
   - name: API
     url: "docs/api"
 url: "http://counter.cupoftea.io"
