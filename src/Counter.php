@@ -133,16 +133,16 @@ class Counter implements SeekableIterator
             $this->length = (int) $countable;
         } elseif (is_array($countable) || $countable instanceof Countable) {
             $this->length = count($countable);
+        } elseif (class_exists('Illuminate\Contracts\Support\Arrayable') && $countable instanceof \Illuminate\Contracts\Support\Arrayable) {
+            $this->length = count($countable->toArray());
         } elseif ($countable instanceof Traversable) {
             $this->length = 0;
             
             foreach ($countable as $v) {
                 $this->length++;
             }
-        } elseif (class_exists('Illuminate\Contracts\Support\Arrayable') && $countable instanceof \Illuminate\Contracts\Support\Arrayable) {
-            $this->length = count($countable->toArray());
         } else {
-            $this->length = null;
+            $this->length = INF;
         }
     }
     
@@ -454,7 +454,7 @@ class Counter implements SeekableIterator
     /**
      * Get the length of the traversable or the counter.
      *
-     * @return int
+     * @return float
      */
     public function length()
     {
