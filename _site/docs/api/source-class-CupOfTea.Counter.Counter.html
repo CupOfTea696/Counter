@@ -119,7 +119,7 @@
 </span></span><span id="26" class="l"><a href="#26"> 26 </a><span class="php-comment">     *
 </span></span><span id="27" class="l"><a href="#27"> 27 </a><span class="php-comment">     * @const string
 </span></span><span id="28" class="l"><a href="#28"> 28 </a><span class="php-comment">     */</span>
-</span><span id="29" class="l"><a href="#29"> 29 </a>    <span class="php-keyword1">const</span> VERSION = <span class="php-quote">'1.0.1'</span>;
+</span><span id="29" class="l"><a href="#29"> 29 </a>    <span class="php-keyword1">const</span> VERSION = <span class="php-quote">'1.0.3'</span>;
 </span><span id="30" class="l"><a href="#30"> 30 </a>    
 </span><span id="31" class="l"><a href="#31"> 31 </a>    <span class="php-comment">/**
 </span></span><span id="32" class="l"><a href="#32"> 32 </a><span class="php-comment">     * The current position.
@@ -534,95 +534,93 @@
 </span><span id="441" class="l"><a href="#441">441 </a>        <span class="php-keyword1">if</span> (<span class="php-var">$this</span>-&gt;traversable()) {
 </span><span id="442" class="l"><a href="#442">442 </a>            <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;<span class="php-keyword2">current</span>();
 </span><span id="443" class="l"><a href="#443">443 </a>        }
-</span><span id="444" class="l"><a href="#444">444 </a>        
-</span><span id="445" class="l"><a href="#445">445 </a>        <span class="php-keyword1">return</span>;
-</span><span id="446" class="l"><a href="#446">446 </a>    }
-</span><span id="447" class="l"><a href="#447">447 </a>    
-</span><span id="448" class="l"><a href="#448">448 </a>    <span class="php-comment">/**
-</span></span><span id="449" class="l"><a href="#449">449 </a><span class="php-comment">     * Get the current position.
-</span></span><span id="450" class="l"><a href="#450">450 </a><span class="php-comment">     *
-</span></span><span id="451" class="l"><a href="#451">451 </a><span class="php-comment">     * @return int
-</span></span><span id="452" class="l"><a href="#452">452 </a><span class="php-comment">     */</span>
-</span><span id="453" class="l"><a href="#453">453 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> index()
-</span><span id="454" class="l"><a href="#454">454 </a>    {
-</span><span id="455" class="l"><a href="#455">455 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;i;
-</span><span id="456" class="l"><a href="#456">456 </a>    }
-</span><span id="457" class="l"><a href="#457">457 </a>    
-</span><span id="458" class="l"><a href="#458">458 </a>    <span class="php-comment">/**
-</span></span><span id="459" class="l"><a href="#459">459 </a><span class="php-comment">     * Get the current iteration.
-</span></span><span id="460" class="l"><a href="#460">460 </a><span class="php-comment">     *
-</span></span><span id="461" class="l"><a href="#461">461 </a><span class="php-comment">     * @return int
-</span></span><span id="462" class="l"><a href="#462">462 </a><span class="php-comment">     */</span>
-</span><span id="463" class="l"><a href="#463">463 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> iteration()
-</span><span id="464" class="l"><a href="#464">464 </a>    {
-</span><span id="465" class="l"><a href="#465">465 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;i + <span class="php-num">1</span>;
-</span><span id="466" class="l"><a href="#466">466 </a>    }
-</span><span id="467" class="l"><a href="#467">467 </a>    
-</span><span id="468" class="l"><a href="#468">468 </a>    <span class="php-comment">/**
-</span></span><span id="469" class="l"><a href="#469">469 </a><span class="php-comment">     * Get the length of the traversable or the counter.
-</span></span><span id="470" class="l"><a href="#470">470 </a><span class="php-comment">     *
-</span></span><span id="471" class="l"><a href="#471">471 </a><span class="php-comment">     * @return float
-</span></span><span id="472" class="l"><a href="#472">472 </a><span class="php-comment">     */</span>
-</span><span id="473" class="l"><a href="#473">473 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> length()
-</span><span id="474" class="l"><a href="#474">474 </a>    {
-</span><span id="475" class="l"><a href="#475">475 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;length;
-</span><span id="476" class="l"><a href="#476">476 </a>    }
-</span><span id="477" class="l"><a href="#477">477 </a>    
-</span><span id="478" class="l"><a href="#478">478 </a>    <span class="php-comment">/**
-</span></span><span id="479" class="l"><a href="#479">479 </a><span class="php-comment">     * Reset the counter to its default state.
-</span></span><span id="480" class="l"><a href="#480">480 </a><span class="php-comment">     *
-</span></span><span id="481" class="l"><a href="#481">481 </a><span class="php-comment">     * @return void
-</span></span><span id="482" class="l"><a href="#482">482 </a><span class="php-comment">     */</span>
-</span><span id="483" class="l"><a href="#483">483 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> clear()
-</span><span id="484" class="l"><a href="#484">484 </a>    {
-</span><span id="485" class="l"><a href="#485">485 </a>        <span class="php-var">$this</span>-&gt;i = <span class="php-num">0</span>;
-</span><span id="486" class="l"><a href="#486">486 </a>        <span class="php-var">$this</span>-&gt;length = <span class="php-var">$this</span>-&gt;traversable = <span class="php-keyword1">null</span>;
-</span><span id="487" class="l"><a href="#487">487 </a>    }
-</span><span id="488" class="l"><a href="#488">488 </a>    
+</span><span id="444" class="l"><a href="#444">444 </a>    }
+</span><span id="445" class="l"><a href="#445">445 </a>    
+</span><span id="446" class="l"><a href="#446">446 </a>    <span class="php-comment">/**
+</span></span><span id="447" class="l"><a href="#447">447 </a><span class="php-comment">     * Get the current position.
+</span></span><span id="448" class="l"><a href="#448">448 </a><span class="php-comment">     *
+</span></span><span id="449" class="l"><a href="#449">449 </a><span class="php-comment">     * @return int
+</span></span><span id="450" class="l"><a href="#450">450 </a><span class="php-comment">     */</span>
+</span><span id="451" class="l"><a href="#451">451 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> index()
+</span><span id="452" class="l"><a href="#452">452 </a>    {
+</span><span id="453" class="l"><a href="#453">453 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;i;
+</span><span id="454" class="l"><a href="#454">454 </a>    }
+</span><span id="455" class="l"><a href="#455">455 </a>    
+</span><span id="456" class="l"><a href="#456">456 </a>    <span class="php-comment">/**
+</span></span><span id="457" class="l"><a href="#457">457 </a><span class="php-comment">     * Get the current iteration.
+</span></span><span id="458" class="l"><a href="#458">458 </a><span class="php-comment">     *
+</span></span><span id="459" class="l"><a href="#459">459 </a><span class="php-comment">     * @return int
+</span></span><span id="460" class="l"><a href="#460">460 </a><span class="php-comment">     */</span>
+</span><span id="461" class="l"><a href="#461">461 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> iteration()
+</span><span id="462" class="l"><a href="#462">462 </a>    {
+</span><span id="463" class="l"><a href="#463">463 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;i + <span class="php-num">1</span>;
+</span><span id="464" class="l"><a href="#464">464 </a>    }
+</span><span id="465" class="l"><a href="#465">465 </a>    
+</span><span id="466" class="l"><a href="#466">466 </a>    <span class="php-comment">/**
+</span></span><span id="467" class="l"><a href="#467">467 </a><span class="php-comment">     * Get the length of the traversable or the counter.
+</span></span><span id="468" class="l"><a href="#468">468 </a><span class="php-comment">     *
+</span></span><span id="469" class="l"><a href="#469">469 </a><span class="php-comment">     * @return float
+</span></span><span id="470" class="l"><a href="#470">470 </a><span class="php-comment">     */</span>
+</span><span id="471" class="l"><a href="#471">471 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> length()
+</span><span id="472" class="l"><a href="#472">472 </a>    {
+</span><span id="473" class="l"><a href="#473">473 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;length;
+</span><span id="474" class="l"><a href="#474">474 </a>    }
+</span><span id="475" class="l"><a href="#475">475 </a>    
+</span><span id="476" class="l"><a href="#476">476 </a>    <span class="php-comment">/**
+</span></span><span id="477" class="l"><a href="#477">477 </a><span class="php-comment">     * Reset the counter to its default state.
+</span></span><span id="478" class="l"><a href="#478">478 </a><span class="php-comment">     *
+</span></span><span id="479" class="l"><a href="#479">479 </a><span class="php-comment">     * @return void
+</span></span><span id="480" class="l"><a href="#480">480 </a><span class="php-comment">     */</span>
+</span><span id="481" class="l"><a href="#481">481 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> clear()
+</span><span id="482" class="l"><a href="#482">482 </a>    {
+</span><span id="483" class="l"><a href="#483">483 </a>        <span class="php-var">$this</span>-&gt;i = <span class="php-num">0</span>;
+</span><span id="484" class="l"><a href="#484">484 </a>        <span class="php-var">$this</span>-&gt;length = <span class="php-var">$this</span>-&gt;traversable = <span class="php-keyword1">null</span>;
+</span><span id="485" class="l"><a href="#485">485 </a>    }
+</span><span id="486" class="l"><a href="#486">486 </a>    
+</span><span id="487" class="l"><a href="#487">487 </a>    <span class="php-comment">//</span>
+</span><span id="488" class="l"><a href="#488">488 </a>    <span class="php-comment">// helper methods</span>
 </span><span id="489" class="l"><a href="#489">489 </a>    <span class="php-comment">//</span>
-</span><span id="490" class="l"><a href="#490">490 </a>    <span class="php-comment">// helper methods</span>
-</span><span id="491" class="l"><a href="#491">491 </a>    <span class="php-comment">//</span>
-</span><span id="492" class="l"><a href="#492">492 </a>    
-</span><span id="493" class="l"><a href="#493">493 </a>    <span class="php-comment">/**
-</span></span><span id="494" class="l"><a href="#494">494 </a><span class="php-comment">     * Check if a variable is castable to an integer.
-</span></span><span id="495" class="l"><a href="#495">495 </a><span class="php-comment">     *
-</span></span><span id="496" class="l"><a href="#496">496 </a><span class="php-comment">     * @param  mixed  $int
-</span></span><span id="497" class="l"><a href="#497">497 </a><span class="php-comment">     * @return bool
-</span></span><span id="498" class="l"><a href="#498">498 </a><span class="php-comment">     */</span>
-</span><span id="499" class="l"><a href="#499">499 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> isInt(<span class="php-var">$int</span>)
-</span><span id="500" class="l"><a href="#500">500 </a>    {
-</span><span id="501" class="l"><a href="#501">501 </a>        <span class="php-keyword1">return</span> (<span class="php-keyword2">is_numeric</span>(<span class="php-var">$int</span>) &amp;&amp; (int) <span class="php-var">$int</span> == (float) <span class="php-var">$int</span>) || <span class="php-keyword2">is_null</span>(<span class="php-var">$int</span>);
-</span><span id="502" class="l"><a href="#502">502 </a>    }
-</span><span id="503" class="l"><a href="#503">503 </a>    
+</span><span id="490" class="l"><a href="#490">490 </a>    
+</span><span id="491" class="l"><a href="#491">491 </a>    <span class="php-comment">/**
+</span></span><span id="492" class="l"><a href="#492">492 </a><span class="php-comment">     * Check if a variable is castable to an integer.
+</span></span><span id="493" class="l"><a href="#493">493 </a><span class="php-comment">     *
+</span></span><span id="494" class="l"><a href="#494">494 </a><span class="php-comment">     * @param  mixed  $int
+</span></span><span id="495" class="l"><a href="#495">495 </a><span class="php-comment">     * @return bool
+</span></span><span id="496" class="l"><a href="#496">496 </a><span class="php-comment">     */</span>
+</span><span id="497" class="l"><a href="#497">497 </a>    <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> isInt(<span class="php-var">$int</span>)
+</span><span id="498" class="l"><a href="#498">498 </a>    {
+</span><span id="499" class="l"><a href="#499">499 </a>        <span class="php-keyword1">return</span> (<span class="php-keyword2">is_numeric</span>(<span class="php-var">$int</span>) &amp;&amp; (int) <span class="php-var">$int</span> == (float) <span class="php-var">$int</span>) || <span class="php-keyword2">is_null</span>(<span class="php-var">$int</span>);
+</span><span id="500" class="l"><a href="#500">500 </a>    }
+</span><span id="501" class="l"><a href="#501">501 </a>    
+</span><span id="502" class="l"><a href="#502">502 </a>    <span class="php-comment">//</span>
+</span><span id="503" class="l"><a href="#503">503 </a>    <span class="php-comment">// method aliases</span>
 </span><span id="504" class="l"><a href="#504">504 </a>    <span class="php-comment">//</span>
-</span><span id="505" class="l"><a href="#505">505 </a>    <span class="php-comment">// method aliases</span>
-</span><span id="506" class="l"><a href="#506">506 </a>    <span class="php-comment">//</span>
-</span><span id="507" class="l"><a href="#507">507 </a>    
-</span><span id="508" class="l"><a href="#508">508 </a>    <span class="php-comment">/**
-</span></span><span id="509" class="l"><a href="#509">509 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::loop
-</span></span><span id="510" class="l"><a href="#510">510 </a><span class="php-comment">     */</span>
-</span><span id="511" class="l"><a href="#511">511 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> traverse(<span class="php-var">$traversable</span>)
-</span><span id="512" class="l"><a href="#512">512 </a>    {
-</span><span id="513" class="l"><a href="#513">513 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;loop(<span class="php-var">$traversable</span>);
-</span><span id="514" class="l"><a href="#514">514 </a>    }
-</span><span id="515" class="l"><a href="#515">515 </a>    
-</span><span id="516" class="l"><a href="#516">516 </a>    <span class="php-comment">/**
-</span></span><span id="517" class="l"><a href="#517">517 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::index
-</span></span><span id="518" class="l"><a href="#518">518 </a><span class="php-comment">     */</span>
-</span><span id="519" class="l"><a href="#519">519 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> i()
-</span><span id="520" class="l"><a href="#520">520 </a>    {
-</span><span id="521" class="l"><a href="#521">521 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;index();
-</span><span id="522" class="l"><a href="#522">522 </a>    }
-</span><span id="523" class="l"><a href="#523">523 </a>    
-</span><span id="524" class="l"><a href="#524">524 </a>    <span class="php-comment">/**
-</span></span><span id="525" class="l"><a href="#525">525 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::index
-</span></span><span id="526" class="l"><a href="#526">526 </a><span class="php-comment">     */</span>
-</span><span id="527" class="l"><a href="#527">527 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> position()
-</span><span id="528" class="l"><a href="#528">528 </a>    {
-</span><span id="529" class="l"><a href="#529">529 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;index();
-</span><span id="530" class="l"><a href="#530">530 </a>    }
-</span><span id="531" class="l"><a href="#531">531 </a>}
-</span><span id="532" class="l"><a href="#532">532 </a></span></code></pre>
+</span><span id="505" class="l"><a href="#505">505 </a>    
+</span><span id="506" class="l"><a href="#506">506 </a>    <span class="php-comment">/**
+</span></span><span id="507" class="l"><a href="#507">507 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::loop
+</span></span><span id="508" class="l"><a href="#508">508 </a><span class="php-comment">     */</span>
+</span><span id="509" class="l"><a href="#509">509 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> traverse(<span class="php-var">$traversable</span>)
+</span><span id="510" class="l"><a href="#510">510 </a>    {
+</span><span id="511" class="l"><a href="#511">511 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;loop(<span class="php-var">$traversable</span>);
+</span><span id="512" class="l"><a href="#512">512 </a>    }
+</span><span id="513" class="l"><a href="#513">513 </a>    
+</span><span id="514" class="l"><a href="#514">514 </a>    <span class="php-comment">/**
+</span></span><span id="515" class="l"><a href="#515">515 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::index
+</span></span><span id="516" class="l"><a href="#516">516 </a><span class="php-comment">     */</span>
+</span><span id="517" class="l"><a href="#517">517 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> i()
+</span><span id="518" class="l"><a href="#518">518 </a>    {
+</span><span id="519" class="l"><a href="#519">519 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;index();
+</span><span id="520" class="l"><a href="#520">520 </a>    }
+</span><span id="521" class="l"><a href="#521">521 </a>    
+</span><span id="522" class="l"><a href="#522">522 </a>    <span class="php-comment">/**
+</span></span><span id="523" class="l"><a href="#523">523 </a><span class="php-comment">     * @see \CupOfTea\Support\Counter::index
+</span></span><span id="524" class="l"><a href="#524">524 </a><span class="php-comment">     */</span>
+</span><span id="525" class="l"><a href="#525">525 </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> position()
+</span><span id="526" class="l"><a href="#526">526 </a>    {
+</span><span id="527" class="l"><a href="#527">527 </a>        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;index();
+</span><span id="528" class="l"><a href="#528">528 </a>    }
+</span><span id="529" class="l"><a href="#529">529 </a>}
+</span><span id="530" class="l"><a href="#530">530 </a></span></code></pre>
 	</div>
 
 	<div id="footer">
