@@ -441,8 +441,6 @@ class Counter implements SeekableIterator
         if ($this->traversable()) {
             return $this->current();
         }
-        
-        return;
     }
     
     /**
