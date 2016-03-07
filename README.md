@@ -7,9 +7,9 @@
 ### Simple indexed looping.
 <!-- header end -->
 
-Easily loop over any Traversable or array while keeping track of the index. It will also accept any other variable types, and cast those to an array.
+Easily loop over any Traversable or Array while keeping track of the index. It will also accept any other variable types, and cast those to an array.
 
-With Counter you can both keep track of the current index and iteration, regardless of which keys are being used. In addition to that, Counter also provides a stack of useful methods to check if the current iteration matches and requirements, for example `Counter::first()` and `Counter::even()`.
+With Counter you can both keep track of the current index and iteration while traversing any variable, regardless of which keys are being used. In addition to that, Counter also provides a stack of useful methods to check if the current iteration matches set requirements, for example `Counter::first()` and `Counter::even()`.
 
  - [Documentation](http://counter.cupoftea.io/docs/)
  - [API Reference](http://counter.cupoftea.io/docs/api/)
