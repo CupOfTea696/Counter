@@ -22,7 +22,7 @@ $ composer require cupoftea/counter ^1.0
 
 ### Laravel integration
 
-Add the Counter ServiceProvider to you `config/app.php`.
+Add the Counter ServiceProvider to your `config/app.php`.
 
 ```php
 	'providers' => [
