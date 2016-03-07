@@ -123,22 +123,116 @@
 <h2 id="traversing-using-loops">Traversing using loops</h2>
 
 <p>Counter's main usage is to loop over variables, keeping track of the current index. The <code>loop</code> method allows you to loop over any variable. If the variable isn't Traversable or an array, it will be cast to an array in order to loop over it. If the variable is an instance of <code>Illuminate\Contracts\Support\Arrayable</code>, it will use the <code>toArray</code> method to do so.</p>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+
+<p>Alternatively, you can use the alias <code>traverse</code> instead.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'r'</span> <span class="o">=&gt;</span> <span class="mi">128</span><span class="p">,</span> <span class="s1">'g'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'b'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">];</span>
 <span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
 
-<span class="k">foreach</span><span class="p">(</span><span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
     <span class="o">...</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="available-methods">Available methods</h2>
 
-<ul>
-<li>Loop</li>
-<li>getTraversable</li>
+<ul class="toc">
+<li class="toc/item"><a data-scrollto="gettraversable">getTraversable()</a></li>
+<li class="toc/item"><a data-scrollto="increment">increment()</a></li>
+<li class="toc/item"><a data-scrollto="decrement">decrement()</a></li>
+<li class="toc/item"><a data-scrollto="tick">tick()</a></li>
+<li class="toc/item"><a data-scrollto="first">first()</a></li>
+<li class="toc/item"><a data-scrollto="last">last()</a></li>
+<li class="toc/item"><a data-scrollto="nth">nth()</a></li>
+<li class="toc/item"><a data-scrollto="even">even()</a></li>
+<li class="toc/item"><a data-scrollto="odd">odd()</a></li>
+<li class="toc/item"><a data-scrollto="item">item()</a></li>
+<li class="toc/item"><a data-scrollto="index">index()</a></li>
+<li class="toc/item"><a data-scrollto="iteration">iteration()</a></li>
+<li class="toc/item"><a data-scrollto="length">length()</a></li>
 </ul>
 
-<h4 id="gettraversable">getTraversable</h4>
+<h4 id="gettraversable"><code>getTraversable()</code></h4>
 
+<p>Get the item that is being traversed. This method returns the Traversable object, or an array.</p>
+
+<h4 id="increment"><code>increment()</code></h4>
+
+<p>Increment the counter by a given amount. The amount defaults to 1.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">increment</span><span class="p">();</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">increment</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="decrement"><code>decrement()</code></h4>
+
+<p>Decrement the counter by a given amount. The amount defaults to 1.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">decrement</span><span class="p">();</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">decrement</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="tick"><code>tick()</code></h4>
+
+<p>Increment the counter by 1.</p>
+
+<h4 id="first"><code>first()</code></h4>
+
+<p>Check if the current position is the initial position.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+<span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">);</span>
+
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span> <span class="c1">// true</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">tick</span><span class="p">();</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span> <span class="c1">// false</span>
+</code></pre></div>
+<h4 id="last"><code>last()</code></h4>
+
+<p>Check if the current position is the last position.</p>
+
+<h4 id="nth"><code>nth()</code></h4>
+
+<p>Check if the current iteration is the nth iteration. This method is 1 based.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+<span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">);</span>
+
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">nth</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// true</span>
+</code></pre></div>
+<h4 id="even"><code>even()</code></h4>
+
+<p>Check if the current iteration is an even iteration. This method is 1 based.</p>
+
+<h4 id="odd"><code>odd()</code></h4>
+
+<p>Check if the current iteration is an odd iteration. This method is 1 based.</p>
+
+<h4 id="item"><code>item()</code></h4>
+
+<p>Return the current element from the variable being Traversed.</p>
+
+<h4 id="index"><code>index()</code></h4>
+
+<p>Get the current index. This method has an alias <code>i()</code> and <code>position()</code>.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+<span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">);</span>
+
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span> <span class="c1">// 0</span>
+</code></pre></div>
+<h4 id="iteration"><code>iteration()</code></h4>
+
+<p>Get the current iteration.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+<span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">);</span>
+
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">iteration</span><span class="p">();</span> <span class="c1">// 1</span>
+</code></pre></div>
+<h4 id="length"><code>length()</code></h4>
+
+<p>Get the length of the traversable.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$myArray</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">];</span>
+<span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">loop</span><span class="p">(</span><span class="nv">$myArray</span><span class="p">);</span>
+
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">length</span><span class="p">();</span> <span class="c1">// 3</span>
+</code></pre></div>
                 
             </main>
         </div>
