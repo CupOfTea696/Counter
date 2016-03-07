@@ -26,7 +26,7 @@ class Counter implements SeekableIterator
      *
      * @const string
      */
-    const VERSION = '1.0.2';
+    const VERSION = '1.0.3';
     
     /**
      * The current position.
