@@ -113,7 +113,47 @@
 
             <main id="content" class="page">
                 
-                    
+                    <h1 id="simple-counter">Simple Counter</h1>
+
+<ul class="toc">
+<li class="toc/item"><a data-scrollto="using-a-simple-counter">Using a Simple Counter</a></li>
+<li class="toc/item"><a data-scrollto="available-methods">Available methods</a></li>
+</ul>
+
+<h2 id="using-a-simple-counter">Using a Simple Counter</h2>
+
+<p>If you just want to keep track of your iterations within a loop, you can use a Simple Counter instead. You can initialise a simple counter with the <code>start</code> method. Optionally, you can pass an Array, Countable or Integer to set the Counter's length.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$counter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Counter</span><span class="p">;</span>
+<span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nv">$condition</span> <span class="o">===</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">...</span>
+
+    <span class="nv">$counter</span><span class="o">-&gt;</span><span class="na">tick</span><span class="p">();</span> <span class="c1">// Always increment your counter right before closing the loop!</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="available-methods">Available methods</h2>
+
+<p>The simple counter has all methods of the normal (traversing) counter, although some of the implementations are slightly different. Only the methods with different implementations are listed below.</p>
+
+<ul class="toc">
+<li class="toc/item"><a data-scrollto="last">last()</a></li>
+<li class="toc/item"><a data-scrollto="item">item()</a></li>
+<li class="toc/item"><a data-scrollto="length">length()</a></li>
+</ul>
+
+<h4 id="last"><code>last()</code></h4>
+
+<p>Will always return false if no Counter length was specified using the <code>start</code> method. Otherwise behaves normally.</p>
+
+<h4 id="item"><code>item()</code></h4>
+
+<p>This method will return <code>null</code>, since a Simple Counter does not keep track of any variable that may be looped. We recommend not using this method for Simple Counters to avoid confusion.</p>
+
+<h4 id="length"><code>length()</code></h4>
+
+<p>If no length was specified using the <code>start</code> method, the PHP Constant <code>INF</code> will be returned.</p>
+
                 
             </main>
         </div>
