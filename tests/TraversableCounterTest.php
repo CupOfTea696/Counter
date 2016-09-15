@@ -57,8 +57,8 @@ class TraversableCounterTest extends PHPUnit_Framework_TestCase
         $traversable = ['one' => 1, 'two' => 2, 'three' => 3];
         $counter = (new Counter())->loop($traversable);
         
-        $counter->seek();
+        $counter->seek(2);
         
-        $this->assertEquals($keys, array_keys($traversable));
+        $this->assertEquals(3, current($counter->getTraversable()));
     }
 }
