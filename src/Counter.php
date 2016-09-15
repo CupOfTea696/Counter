@@ -408,6 +408,17 @@ class Counter implements SeekableIterator
      */
     public function nth($n)
     {
+        if (is_string($n) && preg_match('/^(\d+)n(?:\s*([+-])\s*(\d+))?$/', $n, $matches)) {
+            $x = (int) $matches[1];
+            $add = (int) ((! empty($matches[2]) ? $matches[2] : '') . (! empty($matches[3]) ? $matches[3] : 0));
+            
+            return ($this->iteration() - $add) % $x == 0;
+        }
+        
+        if (! $this->isInt($n)) {
+            throw new InvalidArgumentException('$n must be an integer or a valid n-th expression.');
+        }
+        
         return $this->iteration() % $n == 0;
     }
     

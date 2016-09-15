@@ -140,4 +140,28 @@ class SimpleCounterTest extends PHPUnit_Framework_TestCase
         
         $this->assertTrue($counter->nth(3));
     }
+    
+    /**
+     * @depends test_it_can_increment
+     */
+    public function test_it_can_detect_nth_expressions()
+    {
+        $counter = (new Counter())->start();
+        
+        $this->assertFalse($counter->nth('3n'));
+        $this->assertTrue($counter->nth('3n + 1'));
+        $this->assertFalse($counter->nth('3n-1'));
+        
+        $counter->increment(1);
+        
+        $this->assertFalse($counter->nth('3n'));
+        $this->assertFalse($counter->nth('3n + 1'));
+        $this->assertTrue($counter->nth('3n-1'));
+        
+        $counter->increment(1);
+        
+        $this->assertTrue($counter->nth('3n'));
+        $this->assertFalse($counter->nth('3n + 1'));
+        $this->assertFalse($counter->nth('3n-1'));
+    }
 }
