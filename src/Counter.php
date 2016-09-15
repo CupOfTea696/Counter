@@ -76,7 +76,7 @@ class Counter implements SeekableIterator
      */
     private function setTraversable($traversable)
     {
-        $traversable = value($traversable);
+        $traversable = $this->value($traversable);
         
         if ($traversable instanceof Iterator) {
             $this->traversable = $traversable;
@@ -127,7 +127,7 @@ class Counter implements SeekableIterator
      */
     private function setLength($countable)
     {
-        $countable = value($countable);
+        $countable = $this->value($countable);
         
         if ($this->isInt($countable)) {
             $this->length = (int) $countable;
@@ -497,6 +497,17 @@ class Counter implements SeekableIterator
     private function isInt($int)
     {
         return (is_numeric($int) && (int) $int == (float) $int) || is_null($int);
+    }
+    
+    /**
+     * Return the default value of the given value.
+     *
+     * @param  mixed  $value
+     * @return mixed
+     */
+    private function value($value)
+    {
+        return $value instanceof Closure ? $value() : $value;
     }
     
     //
